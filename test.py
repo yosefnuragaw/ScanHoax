@@ -48,7 +48,7 @@ print(f"Using CUDA: {torch.cuda.is_available()}")
 
 # Load dataset
 df = pd.read_csv("src/dataset/hoax-news-processed.csv").dropna()
-df = df[:20]
+df = df
 tokenizer = BertTokenizer.from_pretrained('indobenchmark/indobert-base-p2', do_lower_case=True)
 features, labels = df.clean_narasi.values, df.hoax.values
 input_ids, attention_masks, labels = data_to_tensor(tokenizer, features, labels)
